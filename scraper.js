@@ -13,6 +13,10 @@ app.use(function(req, res, next) {
     next();
 });
 
+app.get('/', function (req, res) {
+    res.send('Hello World')
+  })
+
 app.get('/info', async (req, res) => {
     res.send(await getInfo('https://www.worldometers.info/coronavirus/country/us'));
 })
