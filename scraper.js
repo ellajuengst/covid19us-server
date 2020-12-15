@@ -26,7 +26,7 @@ app.listen(port, () => {
 
 
 async function getInfo(url) {
-    let browser = await puppeteer.launch();
+    let browser = await puppeteer.launch({ args: ['--no-sandbox'] });
     const page = await browser.newPage();
     await page.setViewport({ width: 1920, height: 1080 });
     await page.setRequestInterception(true);
